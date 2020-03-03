@@ -54,9 +54,8 @@ export default class AddNote extends React.Component {
     // state will be updated
     // state folder needs a default value..
     updateFolder(folder) {
-        console.log(folder[folder.selectedIndex].id)
         this.setState({
-            folder: {value: folder, 
+            folder: {value: folder[folder.selectedIndex].value, 
                      folderId: folder[folder.selectedIndex].id, 
                      touched: true}
         });
