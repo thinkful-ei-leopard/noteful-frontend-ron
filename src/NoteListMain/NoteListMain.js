@@ -16,7 +16,7 @@ export default class NoteListMain extends React.Component {
   static contextType = ApiContext
 
   render() {
-    const { folderId } = this.props.match.params
+    const folderId = parseInt(this.props.match.params.folderId)
     const { notes=[] } = this.context
     const notesForFolder = getNotesForFolder(notes, folderId)
     return (
@@ -28,6 +28,7 @@ export default class NoteListMain extends React.Component {
                 id={note.id}
                 name={note.note_name}
                 modified={note.date_modified}
+                folderId={note.folder_id}
               />
             </li>
           )}

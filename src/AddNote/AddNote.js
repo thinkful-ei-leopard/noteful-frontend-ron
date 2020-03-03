@@ -20,8 +20,8 @@ export default class AddNote extends React.Component {
                 touched: false
             },
             folder: {
-                value: 'Important',
-                folderId: 'b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1', // This works for now, but I need a good way to set the default value of state in here for the first folder.
+                value: '',
+                folderId: 1, // This works for now, but I need a good way to set the default value of state in here for the first folder.
                 touched: false
             }
         };
@@ -69,7 +69,7 @@ export default class AddNote extends React.Component {
                 <option 
                     key={folder.id}
                     id={folder.id} 
-                    value={folder.name}>{folder.name}</option>
+                    value={folder.folder_name}>{folder.folder_name}</option>
             );
         });
     }
@@ -107,6 +107,7 @@ export default class AddNote extends React.Component {
 
     handleSubmit(event){
         event.preventDefault();
+        
         const name = this.state.name.value;
         const content = this.state.content.value;
         const folderId = this.state.folder.folderId;
