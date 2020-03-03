@@ -107,7 +107,6 @@ export default class AddNote extends React.Component {
 
     handleSubmit(event){
         event.preventDefault();
-        //const { name, content, folder } = this.state;
         const name = this.state.name.value;
         const content = this.state.content.value;
         const folderId = this.state.folder.folderId;
@@ -115,9 +114,9 @@ export default class AddNote extends React.Component {
 
        // potentially submit these values to the server here
         const data = {
-            name,
-            modified,
-            folderId,
+            note_name: name,
+            date_modified: modified,
+            folder_id: folderId,
             content,
           };
           
