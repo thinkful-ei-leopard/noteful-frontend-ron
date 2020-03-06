@@ -4,6 +4,7 @@ import ApiContext from '../ApiContext';
 import config from '../config';
 import './AddNote.css';
 import ValidationError from '../ValidationError';
+import { generatePath } from 'react-router-dom';
 
 export default class AddNote extends React.Component {
 

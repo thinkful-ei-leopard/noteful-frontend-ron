@@ -6,3 +6,7 @@ textarea {
 h2, label {
     color: #BDBDBD;
 }
+
+.validation_error {
+    color: red;
+}
